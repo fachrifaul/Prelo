@@ -12,6 +12,9 @@ https://youtu.be/5sMl2d3qW3c
 The architecture is using VIP (View Interactor Presenter) clean architecture with template from 
 http://clean-swift.com
 
+# Git branching model
+http://nvie.com/posts/a-successful-git-branching-model/
+
 # Reactive
 The app uses RxCocoa along with RxSwift for binding data into UITextField, UIBUtton
 
