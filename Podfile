@@ -8,10 +8,7 @@ target 'Prelo' do
   # Pods for Prelo
   pod 'Alamofire', '~> 4.4'
   pod 'WRUserSettings', :git => 'https://github.com/azanium/WRUserSettings.git', :branch => 'master'
-  pod 'Kingfisher'
-  pod 'Hue'
   pod 'SwiftyJSON'
-  pod 'ALThreeCircleSpinner'
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'SkyFloatingLabelTextField'
