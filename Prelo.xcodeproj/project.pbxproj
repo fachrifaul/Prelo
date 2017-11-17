@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D1B1C6C1FBE881F00404BC7 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1B1C6B1FBE881F00404BC7 /* Product.swift */; };
+		3D1B1C6F1FBE8BBB00404BC7 /* LovelistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1B1C6D1FBE8BBB00404BC7 /* LovelistCell.swift */; };
+		3D1B1C701FBE8BBB00404BC7 /* LovelistCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1B1C6E1FBE8BBB00404BC7 /* LovelistCell.xib */; };
 		3D1DE7041FB9BA5700805276 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1DE7031FB9BA5700805276 /* UIViewController+Extensions.swift */; };
 		3D1DE7071FB9CBAD00805276 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1DE7061FB9CBAD00805276 /* CacheManager.swift */; };
 		3D1DE70A1FB9CC0E00805276 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1DE7091FB9CC0E00805276 /* ApiConstants.swift */; };
@@ -46,6 +49,9 @@
 /* Begin PBXFileReference section */
 		27B8101BBF6418D9A8B56BF6 /* Pods-Prelo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prelo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Prelo/Pods-Prelo.release.xcconfig"; sourceTree = "<group>"; };
 		36C2AF9804BF941BC8EEE44A /* Pods_PreloTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PreloTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D1B1C6B1FBE881F00404BC7 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		3D1B1C6D1FBE8BBB00404BC7 /* LovelistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LovelistCell.swift; sourceTree = "<group>"; };
+		3D1B1C6E1FBE8BBB00404BC7 /* LovelistCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LovelistCell.xib; sourceTree = "<group>"; };
 		3D1DE7031FB9BA5700805276 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		3D1DE7061FB9CBAD00805276 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		3D1DE7091FB9CC0E00805276 /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
@@ -116,6 +122,14 @@
 				6D7BA06A22609A12563B33E7 /* Pods-PreloTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		3D1B1C6A1FBE880E00404BC7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3D1B1C6B1FBE881F00404BC7 /* Product.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		3D1DE7021FB9BA4900805276 /* Extensions */ = {
@@ -211,6 +225,8 @@
 		3D81D5271FB9B7F000343C6B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				3DAF5BD41FBE9211000B4274 /* Workers */,
+				3D1B1C6A1FBE880E00404BC7 /* Model */,
 				3D1DE7081FB9CC0000805276 /* Helpers */,
 				3D1DE7051FB9CB7400805276 /* Cache */,
 				3D1DE7021FB9BA4900805276 /* Extensions */,
@@ -236,8 +252,17 @@
 				3D94690E1FB9CE4F009ADDAC /* LovelistRouter.swift */,
 				3D94690F1FB9CE4F009ADDAC /* LovelistViewController.swift */,
 				3D9469101FB9CE4F009ADDAC /* LovelistWorker.swift */,
+				3D1B1C6D1FBE8BBB00404BC7 /* LovelistCell.swift */,
+				3D1B1C6E1FBE8BBB00404BC7 /* LovelistCell.xib */,
 			);
 			path = Lovelist;
+			sourceTree = "<group>";
+		};
+		3DAF5BD41FBE9211000B4274 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Workers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,6 +357,7 @@
 				3D81D5021FB9ACBF00343C6B /* LaunchScreen.storyboard in Resources */,
 				3D81D4FF1FB9ACBF00343C6B /* Assets.xcassets in Resources */,
 				3D81D4FD1FB9ACBF00343C6B /* Main.storyboard in Resources */,
+				3D1B1C701FBE8BBB00404BC7 /* LovelistCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +493,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D1B1C6C1FBE881F00404BC7 /* Product.swift in Sources */,
 				3D81D5251FB9B02600343C6B /* LoginViewController.swift in Sources */,
 				3D81D4FA1FB9ACBF00343C6B /* ViewController.swift in Sources */,
 				3D9469141FB9CE4F009ADDAC /* LovelistRouter.swift in Sources */,
@@ -485,6 +512,7 @@
 				3D81D5231FB9B02600343C6B /* LoginPresenter.swift in Sources */,
 				3D81D5261FB9B02600343C6B /* LoginWorker.swift in Sources */,
 				3D9469121FB9CE4F009ADDAC /* LovelistModels.swift in Sources */,
+				3D1B1C6F1FBE8BBB00404BC7 /* LovelistCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

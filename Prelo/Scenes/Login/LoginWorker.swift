@@ -20,10 +20,6 @@ class LoginWorker {
     func login(_ request: Login.User.Request, completionHandler: @escaping LoginHandler)
     {
         
-        let apiUrl = "https://dev.prelo.id/api/auth/login"
-        
-        print("# Requesting: \(apiUrl) ")
-        
         let parameters: Parameters = ["username_or_email": request.emailUsername,
                                       "password": request.password]
         

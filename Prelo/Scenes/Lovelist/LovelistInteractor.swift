@@ -13,25 +13,32 @@
 import UIKit
 
 protocol LovelistBusinessLogic {
-  func doSomething(request: Lovelist.Something.Request)
+    func lovelist()
 }
 
 protocol LovelistDataStore {
-  //var name: String { get set }
+    //var name: String { get set }
 }
 
 class LovelistInteractor: LovelistBusinessLogic, LovelistDataStore {
-  var presenter: LovelistPresentationLogic?
-  var worker: LovelistWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-  func doSomething(request: Lovelist.Something.Request) {
-    worker = LovelistWorker()
-    worker?.doSomeWork()
+    var presenter: LovelistPresentationLogic?
+    var worker = LovelistWorker()
+    //var name: String = ""
     
-    let response = Lovelist.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+    // MARK: Do something
+    
+    func lovelist() {
+        worker.lovelist() {response in
+            
+            switch response {
+            case .success(let products):
+                let response = Lovelist.Products.Response(products: products)
+                self.presenter?.presentLovelist(response: response)
+            case .error(let message):
+                let response = Lovelist.Error.Response(message: message)
+                self.presenter?.presentLovelistError(response: response)
+            }
+        }
+        
+    }
 }

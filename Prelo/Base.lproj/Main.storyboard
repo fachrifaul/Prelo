@@ -184,7 +184,7 @@
                                 <rect key="frame" x="33" y="522" width="254.5" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Belum punya ID Prelo?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkQ-2R-orz">
-                                        <rect key="frame" x="16" y="8" width="126.5" height="15.5"/>
+                                        <rect key="frame" x="16" y="8" width="126.5" height="14.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -264,17 +264,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Barang yang kamu sukai akan tampil disini" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="biQ-vD-sol">
-                                <rect key="frame" x="25" y="36" width="271.5" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9Ad-Mh-yHX">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="biQ-vD-sol" firstAttribute="top" secondItem="Tgd-J1-oqg" secondAttribute="top" constant="16" id="VZb-jJ-yHJ"/>
-                            <constraint firstItem="biQ-vD-sol" firstAttribute="centerX" secondItem="kDh-2M-EXX" secondAttribute="centerX" id="YCb-WY-ojO"/>
+                            <constraint firstItem="9Ad-Mh-yHX" firstAttribute="leading" secondItem="Tgd-J1-oqg" secondAttribute="leading" id="Dn4-2H-Rwd"/>
+                            <constraint firstItem="Tgd-J1-oqg" firstAttribute="bottom" secondItem="9Ad-Mh-yHX" secondAttribute="bottom" id="ZwQ-lh-c8b"/>
+                            <constraint firstItem="Tgd-J1-oqg" firstAttribute="trailing" secondItem="9Ad-Mh-yHX" secondAttribute="trailing" id="pKH-go-JK2"/>
+                            <constraint firstItem="9Ad-Mh-yHX" firstAttribute="top" secondItem="Tgd-J1-oqg" secondAttribute="top" id="tPd-QA-sKh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Tgd-J1-oqg"/>
                     </view>
@@ -285,6 +285,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="9Ad-Mh-yHX" id="9Se-ME-jhe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7U8-bB-oen" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

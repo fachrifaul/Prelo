@@ -13,16 +13,22 @@
 import UIKit
 
 protocol LovelistPresentationLogic {
-  func presentSomething(response: Lovelist.Something.Response)
+    func presentLovelist(response: Lovelist.Products.Response)
+    func presentLovelistError(response: Lovelist.Error.Response)
 }
 
 class LovelistPresenter: LovelistPresentationLogic {
-  weak var viewController: LovelistDisplayLogic?
-  
-  // MARK: Do something
-  
-  func presentSomething(response: Lovelist.Something.Response) {
-    let viewModel = Lovelist.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+    weak var viewController: LovelistDisplayLogic?
+    
+    // MARK: Do something
+    
+    func presentLovelist(response: Lovelist.Products.Response) {
+        let viewModel = Lovelist.Products.ViewModel(products: response.products)
+        viewController?.displayLovelist(viewModel: viewModel)
+    }
+    
+    func presentLovelistError(response: Lovelist.Error.Response) {
+        let viewModel = Lovelist.Error.ViewModel(message: response.message)
+        viewController?.displayLovelistError(viewModel: viewModel)
+    }
 }

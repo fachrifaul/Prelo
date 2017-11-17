@@ -10,11 +10,64 @@
 //  see http://clean-swift.com
 //
 
+import SwiftyJSON
+import Alamofire
 import UIKit
 
 class LovelistWorker {
-
-  func doSomeWork() {
-  
-  }
+    
+    typealias LovelistHandler = (ApiResponse.LovelistResponse)->Void
+    
+    func lovelist(completionHandler: @escaping LovelistHandler)
+    {
+        let token = CacheManager.shared.token
+        let headers = [ "Authorization": "Token \(token)"]
+        
+        let url = ApiConstants.absoluteUrl(path: "\(ApiConstants.lovelist)1")
+        print("#url \(url)")
+        print("#headers \(headers)")
+        
+        Alamofire.request(url,
+                          method: .get,
+                          encoding: JSONEncoding.default,
+                          headers: headers).responseJSON
+            { (response) in
+                
+                if let jsonValue = response.result.value {
+                    
+                    let json = JSON(jsonValue)
+                    
+                    print("#json \(json)")
+                    
+                    var products = [Product]()
+                    if let items = json["_data"].array {
+                        
+                        for item in items {
+                            
+                            var photo = Product()
+                            
+                            if let name = item["name"].string {
+                                photo.name = name
+                            }
+                            
+                            if let price = item["price"].int {
+                                photo.price = price
+                            }
+                            
+                            products.append(photo)
+                            
+                        }
+                    }
+                    
+                    if products.count == 0 {
+                        completionHandler(.error(message: "Data Kosong"))
+                    } else {
+                        completionHandler(.success(products: products))
+                    }
+                }
+                else {
+                    completionHandler(.error(message: "Data Kosong"))
+                }
+        }
+    }
 }

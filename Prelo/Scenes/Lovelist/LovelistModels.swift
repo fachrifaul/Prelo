@@ -13,19 +13,31 @@
 import UIKit
 
 enum Lovelist {
-  // MARK: Use cases
-  
-  enum Something {
-
-    struct Request {
-
+    // MARK: Use cases
+    
+    enum Products {
+        
+        struct Request {
+            
+        }
+        
+        struct Response {
+            var products : [Product]
+        }
+        
+        struct ViewModel {
+            var products : [Product]
+        }
     }
-
-    struct Response {
-
+    
+    enum Error {
+        
+        struct Response {
+            var message: String = ""
+        }
+        
+        struct ViewModel {
+            var message: String = ""
+        }
     }
-    struct ViewModel {
-
-    }
-  }
 }
